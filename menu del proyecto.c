@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <conio.h>
 int main()
 {
 	int opc;
 	do{
 		system("cls");
 		printf("MENU DE OPCIONES\n\n");//menu principal
-		//le mostramos al usuario los iferentes menus
+		//le mostramos al usuario los diferentes menus
 		printf("1.-Menu de encriptacion\n");
 		printf("2.-Menu de desencriptacion\n");
 		printf("3.-Desctipcion de los codigos\n");
@@ -40,7 +41,7 @@ int main()
  						break;
  					default:
  						system("cls");
- 						printf("la opcion no esta en el menu");//si el usuarioelige un numero que no este en el menu
+ 						printf("la opcion no esta en el menu");//si el usuario elige un numero que no este en el menu
  						getch();//le das a cualquier tecla y regresas al menu principal
  						break;
 		 			}
