@@ -1,12 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 int main()
 {
 	int opc;
+	int i=0, x;
+	char msg[100], cyph[100];
 	do{
 		system("cls");
 		printf("MENU DE OPCIONES\n\n");//menu principal
-		//le mostramos al usuario los iferentes menus
+		//le mostramos al usuario los diferentes menus
 		printf("1.-Menu de encriptacion\n");
 		printf("2.-Menu de desencriptacion\n");
 		printf("3.-Desctipcion de los codigos\n");
@@ -22,7 +25,7 @@ int main()
 				system("cls");
 				printf("MENU DE ENCRIPTACION\n\n");
 				//metodos de encriptacion
-				printf("1.-Metodo Cesar 1\n");
+				printf("1.-Metodo Cesar \n");
 				printf("2.-Forma 1\n");
 				printf("3.-Forma 1\n");
 				printf("4.-Salir\n");//vas al menu principal
@@ -31,6 +34,31 @@ int main()
  					switch(opc1)
  					{
  					case 1:
+ 						system("cls");
+ 						printf("defina x:");
+ 						scanf("%i", &x);
+ 						printf("\n");
+ 						printf("escriba el mensaje:\n");
+ 						scanf("%100[^\n]", msg);
+ 						x=x%27;
+ 						while (msg[i] !='\0'){
+ 						if('a'<=msg[i]<='z'){  // if (ord('a')<=msg[i]<='z')
+							cyph[i]=msg[i]+x;
+							if(msg[i]>'z')
+							cyph[i]='a'+(msg[i]-123);//123=z+1
+						}
+						else
+						if('A'<=msg[i]<='Z'){
+							cyph[i]=msg[i]+x;
+							if(msg[i]>'Z')
+							cyph[i]='A'+(msg[i]-91); //91=Z+1
+						}
+						else
+						cyph[i]=msg[i];
+						++i;
+					    }
+					    printf("%s", cyph);
+					    getch();
  						break;
  					case 2:
  						break;
@@ -87,8 +115,8 @@ int main()
 				printf("3.-Forma 1\n");
 				printf("4.-Salir\n");//vuelves al menu principal
 				printf("opcion escogida: ");
-				scanf("%d",&opc2);
-			 		switch(opc2)
+				scanf("%d",&opc3);
+			 		switch(opc3)
 			 		{	
 					 	case 1:
 				 			break;
