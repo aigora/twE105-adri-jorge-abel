@@ -6,7 +6,7 @@
 int main()
 {
 	int opc;
-	int i=0, x;
+	int i=0, x, n, j;
 	char msg[100], cyph[100];
 	do{
 		system("cls");
@@ -28,7 +28,7 @@ int main()
 				printf("MENU DE ENCRIPTACION\n\n");
 				//metodos de encriptacion
 				printf("1.-Metodo Cesar \n");
-				printf("2.-Ascii\n");
+				printf("2.-Metodo Ascii\n");
 				printf("3.-Forma 1\n");
 				printf("4.-Salir\n");//vas al menu principal
 				printf("opcion escogida: ");
@@ -97,7 +97,7 @@ int main()
 				system("cls");
 				printf("MENU DE DESENCRIPTACION\n\n");
 				printf("1.-Metodo Cesar\n");
-				printf("2.-Forma 1\n");
+				printf("2.-Metodo Ascii\n");
 				printf("3.-Forma 1\n");
 				printf("4.-Salir\n");//vuelves al menu principal
 				printf("opcion escogida: ");
@@ -127,7 +127,7 @@ int main()
 				system("cls");
 				printf("MENU DE INFORMACION\n\n");//en este menu se	ofrece informacio de los codigos
 				printf("1.-Metodo Cesar\n");
-				printf("2.-Forma 1\n");
+				printf("2.-Metodo Ascii\n");
 				printf("3.-Forma 1\n");
 				printf("4.-Salir\n");//vuelves al menu principal
 				printf("opcion escogida: ");
@@ -135,8 +135,58 @@ int main()
 			 		switch(opc3)
 			 		{	
 					 	case 1:
+					 		printf("\n");
+					 		printf("Codigo Cesar:\n");
+							printf("Este codigo consiste en la conversion de cada letra del  mensaje en otra separada x espacios en el abecedario,\nsiendo x definida por el usuario\n");
+							printf("\n");
+							printf("Por ejemplo, si x=3:\n");
+							x=2;
+							
+							for(i=97;i<123;i++){
+								x=x%27;
+								n=i+x;
+								if(n>122)
+								j=97+(n-123);
+								else
+								j=n;
+								printf("%c", i);
+								printf("\t");
+								printf("%c", j);
+								printf("\n");
+							}
+							for(i=65;i<91;i++){
+								x=x%27;
+								n=i+x;
+								if(n>90)
+								j=65+(n-91);
+								else
+								j=n;
+								printf("%c", i);
+								printf("\t");
+								printf("%c", j);
+								printf("\n");
+							}
+							getch();
 				 			break;
 				 		case 2:
+				 			printf("\n");
+				 			printf("Codigo Ascii:\n");
+							printf("Este codigo consiste en la convesion de cada letra del mensaje en la que le corresponde en el codigo ASCII \n");
+							printf("\n");
+							printf("Por ejemplo:\n");
+							for(i=97;i<123;i++){
+								printf("%c", i);
+								printf("\t");
+								printf("%i", i);
+								printf("\n");
+							}
+							for(i=65;i<91;i++){
+								printf("%c", i);
+								printf("\t");
+								printf("%i", i);
+								printf("\n");
+							}
+							getch();
 				 			break;
 				 		case 3:
 				 			break;
