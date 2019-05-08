@@ -28,7 +28,7 @@ int main()
 				printf("MENU DE ENCRIPTACION\n\n");
 				//metodos de encriptacion
 				printf("1.-Metodo Cesar \n");
-				printf("2.-Forma 1\n");
+				printf("2.-Ascii\n");
 				printf("3.-Forma 1\n");
 				printf("4.-Salir\n");//vas al menu principal
 				printf("opcion escogida: ");
@@ -41,28 +41,42 @@ int main()
  						scanf("%i", &x);
  						printf("\n");
  						printf("escriba el mensaje:\n");
- 						scanf("%100[^\n]", msg);
- 						x=x%27;
+ 						scanf(" %[^\n]", msg);
+ 						printf("%s\n", msg);
+						 x=x%27;
  						while (msg[i] !='\0'){
  						if('a'<=msg[i]<='z'){  // if (ord('a')<=msg[i]<='z')
 							cyph[i]=msg[i]+x;
-							if(msg[i]>'z')
-							cyph[i]='a'+(msg[i]-123);//123=z+1
+							if(cyph[i]>'z')
+							cyph[i]='a'+(cyph[i]-123);//123=z+1
 						}
 						else
 						if('A'<=msg[i]<='Z'){
 							cyph[i]=msg[i]+x;
-							if(msg[i]>'Z')
-							cyph[i]='A'+(msg[i]-91); //91=Z+1
+							if(cyph[i]>'Z')
+							cyph[i]='A'+(cyph[i]-91); //91=Z+1
 						}
 						else
 						cyph[i]=msg[i];
 						++i;
 					    }
-					    printf("%s", cyph);
+					    i=0;
+					    while (cyph[i] !='\0'){
+					    printf("%c", cyph[i]);
+					    ++i;
+						}
 					    getch();
  						break;
  					case 2:
+ 						system("cls");
+ 						printf("escriba el mensaje:\n");
+ 						scanf(" %[^\n]", msg);
+ 						while (msg[i] !='\0'){
+ 						printf("|%i|", msg[i]);
+ 						++i;
+					    }
+					    
+					    getch();
  						break;
  					case 3:
  						break;
