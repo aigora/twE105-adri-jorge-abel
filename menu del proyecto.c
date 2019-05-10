@@ -1,13 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 #include <conio.h>
 
 int main()
 {
 	int opc;
-	int i=0, x, n, j;
-	char msg[100], cyph[100];
+	int i, x, n, j;
+	char msg[200], cyph[200];
 	do{
 		system("cls");
 		printf("MENU DE OPCIONES\n\n");//menu principal
@@ -30,7 +29,8 @@ int main()
 				printf("1.-Metodo Cesar \n");
 				printf("2.-Metodo Ascii\n");
 				printf("3.-Forma 1\n");
-				printf("4.-Salir\n");//vas al menu principal
+				printf("4.-Forma 1\n");
+				printf("10.-Salir\n");//vas al menu principal
 				printf("opcion escogida: ");
 				scanf("%d",&opc1);//eliges el codigo
  					switch(opc1)
@@ -44,27 +44,27 @@ int main()
  						scanf(" %[^\n]", msg);
  						printf("%s\n", msg);
 						 x=x%27;
+						 i=0;
  						while (msg[i] !='\0'){
- 						if('a'<=msg[i]<='z'){  // if (ord('a')<=msg[i]<='z')
+ 						if(msg[i] >= 'a' && msg[i] <= 'z'){  // if (ord('a')<=msg[i]<='z')
 							cyph[i]=msg[i]+x;
 							if(cyph[i]>'z')
-							cyph[i]='a'+(cyph[i]-123);//123=z+1
+								cyph[i]='a'+(cyph[i]-123);//123=z+1
 						}
 						else
-						if('A'<=msg[i]<='Z'){
+						if(msg[i] >= 'A' && msg[i] <= 'Z'){
 							cyph[i]=msg[i]+x;
 							if(cyph[i]>'Z')
-							cyph[i]='A'+(cyph[i]-91); //91=Z+1
+							cyph[i]='A'+(cyph[i]- 91); //91=Z+1
 						}
 						else
 						cyph[i]=msg[i];
 						++i;
 					    }
-					    i=0;
-					    while (cyph[i] !='\0'){
-					    printf("%c", cyph[i]);
-					    ++i;
-						}
+					    cyph[i] ='\0';
+					    printf("%s", cyph);
+					    
+						
 					    getch();
  						break;
  					case 2:
@@ -99,7 +99,8 @@ int main()
 				printf("1.-Metodo Cesar\n");
 				printf("2.-Metodo Ascii\n");
 				printf("3.-Forma 1\n");
-				printf("4.-Salir\n");//vuelves al menu principal
+				printf("4.-Forma 1\n");
+				printf("10.-Salir\n");//vuelves al menu principal
 				printf("opcion escogida: ");
 				scanf("%d",&opc2);
 		 			switch(opc2)
@@ -118,7 +119,7 @@ int main()
 		 					getch();
 		 					break;
 							}
-		 		}while(opc2!=4);
+		 		}while(opc2!=10);
 					break;
 			case 3:
 				system("cls");
@@ -129,7 +130,8 @@ int main()
 				printf("1.-Metodo Cesar\n");
 				printf("2.-Metodo Ascii\n");
 				printf("3.-Forma 1\n");
-				printf("4.-Salir\n");//vuelves al menu principal
+				printf("4.-Forma 1\n");
+				printf("10.-Salir\n");//vuelves al menu principal
 				printf("opcion escogida: ");
 				scanf("%d",&opc3);
 			 		switch(opc3)
@@ -198,7 +200,7 @@ int main()
 					 	getch();
 					 	break;
 						}
-		 		}while(opc2!=4);
+		 		}while(opc2!=10);
 					break;
 			case 4:
 				//sales del programa
