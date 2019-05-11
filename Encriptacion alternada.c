@@ -1,25 +1,27 @@
 #include <stdio.h>
 int main()
 {
-int i=0, n=1;
+int i, n, t;
 char texto [200], texto_encriptado [200];
 printf("Introduzca el texto que desea encriptar \n");
 scanf("%200[^\n]", texto);
-while( texto[i]!='\0')
+for (n=0; texto[n]!='\0'; n++)
 {
-if(i%2!=0) 
+	t=n;
+}
+for(i=0; texto[i]!='\0'; i++)
+{
+	if(i<=t/2) 
 	{
-	texto_encriptado[i]=texto[i]+n;
-	n--;
-	i++;
+	texto_encriptado[i]=texto[n];
+	n=n-1;
 	}
 else
 	{
-	texto_encriptado[i]=texto[i]-n;
-	n++;
-	i++;	
+	texto_encriptado[i]=texto[i];	
 	}
 }
-printf("%s \n", texto_encriptado);
+for(i=0; texto_encriptado[i]!='\0'; i++)
+printf("%s\n", texto_encriptado);
 return 0;
 }
