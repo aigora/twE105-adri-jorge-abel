@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
-
+#define MAX 200
 int main()
 {
 	int opc;
 	int i, x, n, j;
-	char msg[200], cyph[200];
+	char msg[MAX], cyph[MAX];
 	do{
 		system("cls");
 		printf("MENU DE OPCIONES\n\n");//menu principal
@@ -106,6 +106,39 @@ int main()
 		 			switch(opc2)
 		 			{
 		 				case 1:
+		 					system("cls");
+ 						    printf("defina x:");
+ 						    scanf("%i", &x);
+ 						    printf("\n");
+ 						    printf("escriba el mensaje encriptado:\n");
+ 						    scanf(" %[^\n]",cyph);
+ 						    x=x%27;
+ 						    i=0;
+ 						    while (cyph[i] !='\0')
+							 {
+ 						    if(cyph[i] >= 'a' && cyph[i] <= 'z')
+							 {  // if (ord('a')<=msg[i]<='z')
+							msg[i]=cyph[i]-x;
+							if(msg[i]<'a')
+							msg[i]='z'-(96-msg[i]);//123=z+1
+						}
+						else
+						if(cyph[i] >= 'A' && cyph[i] <= 'Z')
+						{
+							msg[i]=cyph[i]-x;
+							if(msg[i]<'A')
+							msg[i]='Z'-(64-msg[i]); //91=Z+1
+						}
+						else
+						msg[i]=cyph[i];
+						++i;
+					    }
+					    msg[i] ='\0';
+					    printf("%s", msg);
+					    
+						
+					    getch();
+		 					
 		 					break;
 		 				case 2:
 		 					break;
