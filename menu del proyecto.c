@@ -79,6 +79,28 @@ int main()
 					    getch();
  						break;
  					case 3:
+ 						system("cls");
+ 						printf("escriba el mensaje:\n");
+ 						scanf(" %[^\n]", msg);
+ 						printf("%s\n", msg);
+						 x=x%27;
+						 i=0;
+ 						while (msg[i] !='\0'){
+ 						if(msg[i] >= 'a' && msg[i] <= 'z'){  // if (ord('a')<=msg[i]<='z')
+							cyph[i]=msg[i]-60;
+						}
+						else
+						if(msg[i] >= 'A' && msg[i] <= 'Z'){
+							cyph[i]=msg[i]+90;
+						}
+						else
+						cyph[i]=msg[i];
+						++i;
+					    }
+					    cyph[i] ='\0';
+					    printf("%s", cyph);
+					    
+					    getch();
  						break;
  					case 4:
  						break;
@@ -224,6 +246,31 @@ int main()
 							getch();
 				 			break;
 				 		case 3:
+				 			printf("\n");
+					 		printf("Codigo Windings:\n");
+							printf("Este codigo consiste en la conversion de cada letra del  mensaje un caracter.\n");
+							printf("\n");
+							
+							for(i=97;i<123;i++){
+								x=x%27;
+								n=i-60;
+								j=n;
+								printf("%c", i);
+								printf("\t");
+								printf("%c", j);
+								printf("\n");
+							}
+							for(i=65;i<91;i++){
+								x=x%27;
+								n=i+90;
+								j=n;
+								printf("%c", i);
+								printf("\t");
+								printf("%c", j);
+								printf("\n");
+							}
+							getch();
+				 			break;
 				 			break;
 				 		case 4:
 				 			break;
