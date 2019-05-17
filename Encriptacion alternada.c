@@ -19,7 +19,7 @@ for(i=0; texto[i]!='\0'; i++)
 	}
 else
 	{
-	texto_encriptado[i]=texto[i];	
+	texto_encriptado[i]=texto[i-t];	
 	}
 }
 printf("%s\n", texto_encriptado);
