@@ -7,7 +7,7 @@ int main()
 	int opc, i, x, n, j;// opc es la opcion que se elige en el menu principal
 	char msg[MAX], cyph[MAX];
 	do{
-<<<<<<< HEAD
+
 		system("cls");
 		printf("MENU DE OPCIONES\n\n");//menu principal
 		//le mostramos al usuario los diferentes menus
@@ -15,7 +15,6 @@ int main()
 		printf("2.-Menu de desencriptacion\n");
 		printf("3.-Descripcion de los codigos\n");
 		printf("4.-Salir\n");//sales del programa
-=======
 		system("cls");//Borramos todo lo escrito anteriormente
 		printf("MENU DE OPCIONES\n\n");//menú principal
 		//le mostramos al usuario las diferentes opciones
@@ -23,7 +22,6 @@ int main()
 		printf("2.-Menu de desencriptacion\n");//este otro contiene las formas en las que se pueden descodificar los mensajes ya encriptados por estos métodos
 		printf("3.-Descripcion de los codigos\n");//este apartado explica al usuario las opciones en las que puede encriptar su mensaje
 		printf("9.-Salir\n");//sales del programa, fin
->>>>>>> 9bded16fe503f9c008c6e6695420679f39de049e
 		printf("Opcion escogida: ");
 		scanf("%d",&opc);//elige la opcion
 		switch(opc)
@@ -37,14 +35,11 @@ int main()
 				//metodos de encriptacion
 				printf("1.-Metodo Cesar \n");
 				printf("2.-Metodo Ascii\n");
-<<<<<<< HEAD
 				printf("3.-Encriptacion Alternada\n");
 				printf("4.-Salir\n");//vas al menu principal
-=======
 				printf("3.-Forma 1\n");
 				printf("4.-Forma 1\n");
 				printf("9.-Salir\n");//vas al menu principal
->>>>>>> 9bded16fe503f9c008c6e6695420679f39de049e
 				printf("opcion escogida: ");
 				scanf("%d",&opc1);//eliges el codigo
  					switch(opc1)
@@ -296,11 +291,7 @@ int main()
 							getch();
 				 			break;
 				 		case 3:
-<<<<<<< HEAD
 				 			system("cls");
-=======
-				 			
->>>>>>> 9bded16fe503f9c008c6e6695420679f39de049e
 				 			printf("\n");
 					 		printf("CODIGO WINDINGS:\n");
 							printf("Este codigo consiste en la conversion de cada letra del  mensaje un caracter.\n");
@@ -334,11 +325,7 @@ int main()
 					 	getch();
 					 	break;
 						}
-<<<<<<< HEAD
 		 		}while(opc3!=4);
-=======
-		 		}while(opc2!=4);
->>>>>>> 9bded16fe503f9c008c6e6695420679f39de049e
 					break;
 			case 4:
 				//sales del programa
