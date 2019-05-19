@@ -202,36 +202,16 @@ int main()
  							getch();
 		 					break;
 		 				case 3:
-		 						system("cls");
- 						printf("escriba el mensaje:\n");
- 						scanf(" %[^\n]", msg);
- 						printf("%s\n", msg);
-						 x=x%26;
-						 i=0;
- 						while (msg[i] !='\0'){
- 						if(msg[i] >= 'a' && msg[i] <= 'z'){  // if (ord('a')<=msg[i]<='z')
-							cyph[i]=msg[i]-60;
-						}
-						else
-						if(msg[i] >= 'A' && msg[i] <= 'Z'){
-							cyph[i]=msg[i]+90;
-						}
-						else
-						cyph[i]=msg[i];
-						++i;
-					    }
-					    cyph[i] ='\0';
-					    printf("%s", cyph);
-
-					    getch();
- 						break;
-		 					break;
-		 				case 4:
-		 					break;
-		 				default:
-		 					system("cls");
-		 					printf("la opcion no esta en el menu");
-		 					getch();
+		 				system("cls");
+		 					printf("indique el numero de caracteres (incluyendo espacios):");
+		 					scanf("%i", &x);
+		 					i=0;
+		 					while (i<0){
+							scanf("%i", &j);
+							printf("%c",j);
+							i++;
+ 							}
+ 							getch();
 		 					break;
 							}
 		 		}while(opc2!=4);
