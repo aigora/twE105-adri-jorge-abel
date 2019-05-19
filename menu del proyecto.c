@@ -41,25 +41,10 @@ int main()
  						printf("\n");// se deja un espacio para favorecer la limpieza de la pantalla
  						printf("escriba el mensaje:\n");
 
- 						scanf(" %[^\n]", msg);
- 						printf("%s\n", msg);
-						 x=x%26;
- 						while (msg[i] !='\0'){
- 						if(97<=msg[i]<=122){  // if (ord('a')<=msg[i]<='z')
-							cyph[i]=msg[i]+x;
-							if(cyph[i]>122)
-							cyph[i]=97+(cyph[i]-123);//123=z+1
-						}
-						else
-						if(65<=msg[i]<=90){
-							cyph[i]=msg[i]+x;
-							if(cyph[i]>90)
-							cyph[i]=65+(cyph[i]-91); //91=Z+1
-					 	}
-
+ 						
  						scanf(" %[^\n]", msg);//el mensaje introducido por el usuario se almacena en la variable msg
  						printf("%s\n", msg);//se muestra el mensaje antes de encriptaro
-						x=x%27;//con esta operación evitamos que se sume un nnumero mayor del total de letras en el abecedario
+						x=x%26;//con esta operación evitamos que se sume un numero mayor del total de letras en el abecedario
  						for (i=0; msg[i] !='\0'; i++)//comenzamos la lectura por el primer caracter introducido por el usuario y la finalizamos con la secuencia de cierre
 						{
  						if(msg[i] >= 'a' && msg[i] <= 'z')//si el caracter del mensaje introducido es una letra minúscula
@@ -87,11 +72,13 @@ int main()
  						system("cls");
  						printf("escriba el mensaje:\n");
  						scanf(" %[^\n]", msg);
+ 						printf("|%s|\n", msg);
+ 						i=0;
  						while (msg[i] !='\0'){
- 						printf("|%i|", msg[i]);
+ 						cyph[i]=msg[i];
+ 						printf("|%i|", cyph[i]);
  						++i;
 					    }
-					    cyph[i] ='\0';
 					    getch();
  						break;
  					case 3:
@@ -99,7 +86,7 @@ int main()
  						printf("escriba el mensaje:\n");
  						scanf(" %[^\n]", msg);
  						printf("%s\n", msg);
-						 x=x%27;
+						 x=x%26;
 						 i=0;
  						while (msg[i] !='\0'){
  						if(msg[i] >= 'a' && msg[i] <= 'z'){  // if (ord('a')<=msg[i]<='z')
@@ -126,7 +113,7 @@ int main()
  						getch();//le das a cualquier tecla y regresas al menu principal
  						break;
 		 			}
-		 		}while(opc1!=9);//si le das al 9 regresas al menu principal
+		 		}while(opc1!=4);//si le das al 9 regresas al menu principal
 		 		break;
 			case 2:
 				system("cls");
@@ -178,8 +165,41 @@ int main()
 					    getch();
 		 					break;
 		 				case 2:
+		 					system("cls");
+		 					printf("indique el numero de caracteres (incluyendo espacios):");
+		 					scanf("%i", &x);
+		 					
+		 					for(i=0;i<x;++i){
+							scanf(" %i\t", j);
+							msg[i]=j;
+							printf("%c",msg[i] );
+ 							}
+ 							
 		 					break;
 		 				case 3:
+		 						system("cls");
+ 						printf("escriba el mensaje:\n");
+ 						scanf(" %[^\n]", msg);
+ 						printf("%s\n", msg);
+						 x=x%26;
+						 i=0;
+ 						while (msg[i] !='\0'){
+ 						if(msg[i] >= 'a' && msg[i] <= 'z'){  // if (ord('a')<=msg[i]<='z')
+							cyph[i]=msg[i]-60;
+						}
+						else
+						if(msg[i] >= 'A' && msg[i] <= 'Z'){
+							cyph[i]=msg[i]+90;
+						}
+						else
+						cyph[i]=msg[i];
+						++i;
+					    }
+					    cyph[i] ='\0';
+					    printf("%s", cyph);
+
+					    getch();
+ 						break;
 		 					break;
 		 				case 4:
 		 					break;
@@ -189,7 +209,7 @@ int main()
 		 					getch();
 		 					break;
 							}
-		 		}while(opc2!=10);
+		 		}while(opc2!=4);
 					break;
 			case 3:
 				system("cls");
@@ -295,7 +315,7 @@ int main()
 					 	getch();
 					 	break;
 						}
-		 		}while(opc2!=9);
+		 		}while(opc2!=4);
 					break;
 			case 4:
 				//sales del programa
@@ -308,7 +328,7 @@ int main()
 		
 	}while(opc!=4);
 	return 0;
-}
+
 }while(opc!=4);
 }
 
