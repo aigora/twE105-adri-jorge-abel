@@ -16,6 +16,8 @@ int main()
 		printf("3.-Descripcion de los codigos\n");
 		printf("4.-Salir\n");//sales del programa
 
+
+
 		system("cls");//Borramos todo lo escrito anteriormente
 		printf("MENU DE OPCIONES\n\n");//menú principal
 		//le mostramos al usuario las diferentes opciones
@@ -38,9 +40,17 @@ int main()
 				printf("1.-Metodo Cesar \n");
 				printf("2.-Metodo Ascii\n");
 
+
 				printf("3.-Encriptacion Alternada\n");
 				printf("4.-Salir\n");//vas al menu principal
 
+				printf("3.-Forma 1\n");
+				printf("4.-Forma 1\n");
+				printf("9.-Salir\n");//vas al menu principal
+
+
+				printf("3.-Encriptacion Alternada\n");
+				printf("4.-Salir\n");//vas al menu principal
 				printf("3.-Forma 1\n");
 				printf("4.-Forma 1\n");
 				printf("9.-Salir\n");//vas al menu principal
@@ -184,11 +194,12 @@ int main()
 		 					scanf("%i", &x);
 		 					
 		 					for(i=0;i<x;++i){
-							scanf(" %i\t", j);
-							msg[i]=j;
-							printf("%c",msg[i] );
+							//scanf(" %i\t", j);
+							//msg[i]=j;
+							scanf("%c", j);
+							printf("%d",97);
  							}
- 							
+ 							getch();
 		 					break;
 		 				case 3:
 		 						system("cls");
@@ -299,8 +310,6 @@ int main()
 
 				 			system("cls");
 
-				 			
-
 				 			printf("\n");
 					 		printf("CODIGO WINDINGS:\n");
 							printf("Este codigo consiste en la conversion de cada letra del  mensaje un caracter.\n");
@@ -335,9 +344,11 @@ int main()
 					 	break;
 						}
 
+
 		 		}while(opc3!=4);
 
-		 		}while(opc2!=4);
+
+
 
 					break;
 			case 4:
