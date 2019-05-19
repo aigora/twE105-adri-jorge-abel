@@ -43,18 +43,18 @@ int main()
  						printf("escriba el mensaje:\n");
  						scanf(" %[^\n]", msg);
  						printf("%s\n", msg);
-						 x=x%27;
+						 x=x%26;
  						while (msg[i] !='\0'){
- 						if('a'<=msg[i]<='z'){  // if (ord('a')<=msg[i]<='z')
+ 						if(97<=msg[i]<=122){  // if (ord('a')<=msg[i]<='z')
 							cyph[i]=msg[i]+x;
-							if(cyph[i]>'z')
-							cyph[i]='a'+(cyph[i]-123);//123=z+1
+							if(cyph[i]>122)
+							cyph[i]=97+(cyph[i]-123);//123=z+1
 						}
 						else
-						if('A'<=msg[i]<='Z'){
+						if(65<=msg[i]<=90){
 							cyph[i]=msg[i]+x;
-							if(cyph[i]>'Z')
-							cyph[i]='A'+(cyph[i]-91); //91=Z+1
+							if(cyph[i]>90)
+							cyph[i]=65+(cyph[i]-91); //91=Z+1
 						}
 						else
 						cyph[i]=msg[i];
