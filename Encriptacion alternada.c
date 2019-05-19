@@ -17,9 +17,12 @@ for(i=0; texto[i]!='\0'; i++)
 	texto_encriptado[i]=texto[n];
 	n=n-1;
 	}
-else
+    else
 	{
-	texto_encriptado[i]=texto[i-t];	
+		if()
+		
+		else 
+		texto_encriptado[i]=texto[i-t];	
 	}
 }
 printf("%s\n", texto_encriptado);

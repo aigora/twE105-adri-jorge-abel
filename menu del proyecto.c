@@ -13,7 +13,7 @@ int main()
 		//le mostramos al usuario los diferentes menus
 		printf("1.-Menu de encriptacion\n");
 		printf("2.-Menu de desencriptacion\n");
-		printf("3.-Desctipcion de los codigos\n");
+		printf("3.-Descripcion de los codigos\n");
 		printf("4.-Salir\n");//sales del programa
 		printf("Opcion escogida: ");
 		scanf("%d",&opc);//elige la opcion
@@ -28,9 +28,8 @@ int main()
 				//metodos de encriptacion
 				printf("1.-Metodo Cesar \n");
 				printf("2.-Metodo Ascii\n");
-				printf("3.-Forma 1\n");
-				printf("4.-Forma 1\n");
-				printf("10.-Salir\n");//vas al menu principal
+				printf("3.-Encriptacion Alternada\n");
+				printf("4.-Salir\n");//vas al menu principal
 				printf("opcion escogida: ");
 				scanf("%d",&opc1);//eliges el codigo
  					switch(opc1)
@@ -121,8 +120,7 @@ int main()
 				printf("1.-Metodo Cesar\n");
 				printf("2.-Metodo Ascii\n");
 				printf("3.-Forma 1\n");
-				printf("4.-Forma 1\n");
-				printf("10.-Salir\n");//vuelves al menu principal
+				printf("4.-Salir\n");//vuelves al menu principal
 				printf("opcion escogida: ");
 				scanf("%d",&opc2);
 		 			switch(opc2)
@@ -174,7 +172,7 @@ int main()
 		 					getch();
 		 					break;
 							}
-		 		}while(opc2!=10);
+		 		}while(opc2!=4);
 					break;
 			case 3:
 				system("cls");
@@ -185,15 +183,15 @@ int main()
 				printf("1.-Metodo Cesar\n");
 				printf("2.-Metodo Ascii\n");
 				printf("3.-Forma 1\n");
-				printf("4.-Forma 1\n");
-				printf("10.-Salir\n");//vuelves al menu principal
+				printf("4.-Salir\n");//vuelves al menu principal
 				printf("opcion escogida: ");
 				scanf("%d",&opc3);
 			 		switch(opc3)
 			 		{	
 					 	case 1:
+					 		system("cls");
 					 		printf("\n");
-					 		printf("Codigo Cesar:\n");
+					 		printf("CODIGO CESAR:\n");
 							printf("Este codigo consiste en la conversion de cada letra del  mensaje en otra separada x espacios en el abecedario,\nsiendo x definida por el usuario\n");
 							printf("\n");
 							printf("Por ejemplo, si x=3:\n");
@@ -226,8 +224,9 @@ int main()
 							getch();
 				 			break;
 				 		case 2:
+				 			system("cls");
 				 			printf("\n");
-				 			printf("Codigo Ascii:\n");
+				 			printf("CODIGO ASCII:\n");
 							printf("Este codigo consiste en la convesion de cada letra del mensaje en la que le corresponde en el codigo ASCII \n");
 							printf("\n");
 							printf("Por ejemplo:\n");
@@ -246,8 +245,9 @@ int main()
 							getch();
 				 			break;
 				 		case 3:
+				 			system("cls");
 				 			printf("\n");
-					 		printf("Codigo Windings:\n");
+					 		printf("CODIGO WINDINGS:\n");
 							printf("Este codigo consiste en la conversion de cada letra del  mensaje un caracter.\n");
 							printf("\n");
 							
@@ -280,7 +280,7 @@ int main()
 					 	getch();
 					 	break;
 						}
-		 		}while(opc2!=10);
+		 		}while(opc3!=4);
 					break;
 			case 4:
 				//sales del programa
