@@ -22,8 +22,14 @@ while(texto[i]!='\0')
 	texto_encriptado[i]=texto[n];
 	n=n-1;
 	}
-else
+    else
 	{
+<<<<<<< HEAD
+		if()
+		
+		else 
+		texto_encriptado[i]=texto[i-t];	
+=======
 		if(i%2==0)
 		texto_encriptado[i]=texto[i];
 		else
@@ -31,6 +37,7 @@ else
 		texto_encriptado[i]=texto[n];
 		n=n-1;
 		}
+>>>>>>> 9bded16fe503f9c008c6e6695420679f39de049e
 	}
 	i++;
 }
