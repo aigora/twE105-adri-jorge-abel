@@ -53,7 +53,7 @@ int main()
 							{  
 								cyph[i]=msg[i]+x;//el caracter cifrado será ese desplazado x espacios
 								if(cyph[i]>'z')//si el desplazamiento provoca que el caracter ya no sea una letra
-							 	cyph[i]='a'+(cyph[i]-123);//123=z+1. de esta forma provocamos que vuelva a la a
+							 	cyph[i]= rueda(cyph[i]);//123=z+1. de esta forma provocamos que vuelva a la a
 							}
 
 						else
@@ -61,7 +61,7 @@ int main()
 							{
 							cyph[i]=msg[i]+x;//el caracter es cifrado con normalidad
 								if(cyph[i]>'Z')//si se pasa  de la Z
-								cyph[i]='A'+(cyph[i]- 91); //91=Z+1. de esta forma provocamos que vuelva a la A
+								cyph[i]= rueda(cyph[i]); //91=Z+1. de esta forma provocamos que vuelva a la A
 							}
 						else//en caso de que sea cualquier otro caracter
 						cyph[i]=msg[i];//se mantiene igual
@@ -205,14 +205,14 @@ int main()
 							 {  // if (ord('a')<=msg[i]<='z')
 							msg[i]=cyph[i]-x;
 							if(msg[i]<'a')
-							msg[i]='z'-(96-msg[i]);//123=z+1
+							msg[i]='z'-(96-msg[i]);//96=a-1
 						}
 						else
 						if(cyph[i] >= 'A' && cyph[i] <= 'Z')
 						{
 							msg[i]=cyph[i]-x;
 							if(msg[i]<'A')
-							msg[i]='Z'-(64-msg[i]); //91=Z+1
+							msg[i]='Z'-(64-msg[i]); //64=A-1
 						}
 						else
 						msg[i]=cyph[i];
@@ -284,7 +284,7 @@ int main()
 								x=x%27;
 								n=i+x;
 								if(n>122)
-								j=97+(n-123);
+								j=rueda(n);
 								else
 								j=n;
 								printf("%c", i);
@@ -296,7 +296,7 @@ int main()
 								x=x%27;
 								n=i+x;
 								if(n>90)
-								j=65+(n-91);
+								j=rueda(n);
 								else
 								j=n;
 								printf("%c", i);
@@ -400,6 +400,11 @@ int main()
 
 }while(opc!=4);
 }
+int rueda(int letra){
 
+int salida;
+salida=  letra-26;//26='z'-'a' ó 'Z'-'A'
+return salida;
+}
 
 
