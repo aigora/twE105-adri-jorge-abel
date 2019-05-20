@@ -22,8 +22,7 @@ int main()
 			case 1://en caso de que se elija el menú de encriptación
 				system("cls");//borra lo que hay escrito en la ventana
 				int opc1;//variable opcion que se elige en el menú de encriptación
-				do{// se ejecutan al menos una vez y mientras l usuario no salga del menu (presione 9)
-				system("cls");
+				do{// se ejecutan al menos una vez y mientras l usuario no salga del menu (presione 4)
 				printf("MENU DE ENCRIPTACION\n\n");
 				//metodos de encriptacion
 				printf("1.-Metodo Cesar \n");
@@ -40,9 +39,7 @@ int main()
  						scanf("%i", &x);//lo determina el usuario
  						printf("\n");// se deja un espacio para favorecer la limpieza de la pantalla
  						printf("escriba el mensaje:\n");
-
- 						
- 						scanf(" %[^\n]", msg);//el mensaje introducido por el usuario se almacena en la variable msg
+						scanf(" %[^\n]", msg);//el mensaje introducido por el usuario se almacena en la variable msg
  						printf("%s\n", msg);//se muestra el mensaje antes de encriptaro
 						x=x%26;//con esta operación evitamos que se sume un numero mayor del total de letras en el abecedario
  						for (i=0; msg[i] !='\0'; i++)//comenzamos la lectura por el primer caracter introducido por el usuario y la finalizamos con la secuencia de cierre
