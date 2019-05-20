@@ -108,8 +108,9 @@ int main()
 					    getch();
  						break;
  					case 4:
+ 						system("cls");
  						printf("Introduzca el mensaje que desa cifrar: \n");
-						scanf ("%200[^\n]", &msg);
+						scanf(" %[^\n]", msg);
 						
 						    for (i=0, j=0; msg[i]!='\0'; i++, j++)
 						    {
@@ -162,6 +163,7 @@ int main()
 						            k=0;//reiniciamos la lectura de grupo
 						        }
 						    }   
+						getch();
  						break;
  					case 5:
  						break;
