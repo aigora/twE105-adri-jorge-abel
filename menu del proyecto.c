@@ -28,7 +28,7 @@ int main()
 				//metodos de encriptacion
 				printf("1.-Metodo Cesar \n");
 				printf("2.-Metodo Ascii\n");
-				printf("3.-Forma 1\n");
+				printf("3.-Metodo Windings\n");
 				printf("4.-Forma 1\n");
 				printf("10.-Salir\n");//vas al menu principal
 				printf("opcion escogida: ");
@@ -75,6 +75,7 @@ int main()
  						printf("|%i|", msg[i]);
  						++i;
 					    }
+					    msg[i]='\0';
 					    
 					    getch();
  						break;
@@ -110,7 +111,7 @@ int main()
  						getch();//le das a cualquier tecla y regresas al menu principal
  						break;
 		 			}
-		 		}while(opc1!=4);//si le das al 4 regresas al menu principal
+		 		}while(opc1!=10);//si le das al 4 regresas al menu principal
 		 		break;
 			case 2:
 				system("cls");
@@ -120,7 +121,7 @@ int main()
 				printf("MENU DE DESENCRIPTACION\n\n");
 				printf("1.-Metodo Cesar\n");
 				printf("2.-Metodo Ascii\n");
-				printf("3.-Forma 1\n");
+				printf("3.-Metodo Windings\n");
 				printf("4.-Forma 1\n");
 				printf("10.-Salir\n");//vuelves al menu principal
 				printf("opcion escogida: ");
@@ -130,6 +131,17 @@ int main()
 		 				case 1:
 		 					break;
 		 				case 2:
+		 					system("cls");
+	 						printf("defina x:");
+	 						scanf("%i", &x);
+	 						printf("escriba los numeros de uno en uno:\n");
+	 						for(i=0;i<x;++i){
+	 						scanf("%i\t", cyph[i]);
+							}
+							cyph[i]='\0';
+							printf("%s", cyph);
+							
+							 getch();
 		 					break;
 		 				case 3:
 		 					break;
@@ -151,7 +163,7 @@ int main()
 				printf("MENU DE INFORMACION\n\n");//en este menu se	ofrece informacio de los codigos
 				printf("1.-Metodo Cesar\n");
 				printf("2.-Metodo Ascii\n");
-				printf("3.-Forma 1\n");
+				printf("3.-Metodo Windings\n");
 				printf("4.-Forma 1\n");
 				printf("10.-Salir\n");//vuelves al menu principal
 				printf("opcion escogida: ");
@@ -258,6 +270,6 @@ int main()
 				getch();
 				break;
 		}
-	}while(opc!=4);
+	}while(opc!=10);
 	return 0;
 }
