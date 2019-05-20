@@ -53,7 +53,7 @@ int main()
 							{  
 								cyph[i]=msg[i]+x;//el caracter cifrado será ese desplazado x espacios
 								if(cyph[i]>'z')//si el desplazamiento provoca que el caracter ya no sea una letra
-									cyph[i]='a'+(cyph[i]-123);//123=z+1. de esta forma provocamos que vuelva al principio del alfabeto
+							 	cyph[i]='a'+(cyph[i]-123);//123=z+1. de esta forma provocamos que vuelva a la a
 							}
 
 						else
@@ -61,7 +61,7 @@ int main()
 							{
 							cyph[i]=msg[i]+x;//el caracter es cifrado con normalidad
 								if(cyph[i]>'Z')//si se pasa  de la Z
-								cyph[i]='A'+(cyph[i]- 91); //91=Z+1. provocamos que vuelva al principio del alfabeto 
+								cyph[i]='A'+(cyph[i]- 91); //91=Z+1. de esta forma provocamos que vuelva a la A
 							}
 						else//en caso de que sea cualquier otro caracter
 						cyph[i]=msg[i];//se mantiene igual
@@ -229,11 +229,12 @@ int main()
 		 					printf("indique el numero de caracteres (incluyendo espacios):");
 		 					scanf("%i", &x);
 		 					
-		 					for(i=0;i<x;++i){
-							scanf(" %i\t", j);
-							msg[i]=j;
-							printf("%c",msg[i] );
+		 					do{
+							scanf("%i\t", j);
+							printf("%c",j );
+							++i;
  							}
+ 							while(x>i);
  							
 		 					break;
 		 				case 3:
@@ -241,7 +242,7 @@ int main()
 		 					printf("indique el numero de caracteres (incluyendo espacios):");
 		 					scanf("%i", &x);
 		 					i=0;
-		 					while (i<0){
+		 					while (i<x){
 							scanf("%i", &j);
 							printf("%c",j);
 							i++;
@@ -331,29 +332,49 @@ int main()
 				 			printf("\n");
 					 		printf("CODIGO WINDINGS:\n");
 							printf("Este codigo consiste en la conversion de cada letra del  mensaje un caracter.\n");
+							
+							
 							printf("\n");
+							printf("letra:");
+							printf("\t");
+							printf("  caracter:");
+							printf("\t");
+							printf("numero ASCII:");
+							printf("\n");
+							
 
 							for(i=97;i<123;i++){
 								x=x%27;
 								n=i-60;
 								j=n;
 								printf("%c", i);
-								printf("\t");
-								printf("%c", j);
+								printf("      \t");
+								printf("  %c", j);
+								printf("       \t");
+								printf("%i", j);
 								printf("\n");
 							}
 							for(i=65;i<91;i++){
 								x=x%27;
 								n=i+90;
 								j=n;
-								printf("%c", i);
-								printf("\t");
-								printf("%c", j);
+							printf("%c", i);
+								printf("      \t");
+								printf("  %c", j);
+								printf("       \t");
+								printf("%i", j);
 								printf("\n");
 							}
 							getch();
 				 			break;
 				 		case 4:
+				 			system("cls");
+				 			printf("CODIGO POR TRANSPOSICION:\n");
+							printf("Este codigo consiste en la reorganizacion de las letras del mensaje cogiendo conjuntos de 10 en 10,\nsi en alguno de estos conjuntos faltan letras el programa pondra un *.");
+							printf("\nEjemplo:");
+							printf("el mensaje: Este codigo esta encriptado lo transforma en:\n");
+							printf("");
+							getch();
 				 			break;
 				 		case 5:
  							break;
