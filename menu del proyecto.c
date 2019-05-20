@@ -4,8 +4,9 @@
 #define MAX 200
 int main()
 {
-	int opc, i, x, n, j;// opc es la opcion que se elige en el menu principal
-	char msg[MAX], cyph[MAX];
+	int cifrado[10]={5,2,6,3,8,4,9,0,7,1}, inicial[10]={0,1,2,3,4,5,6,7,8,9},i,j,k,l,m,x,n,opc, espacios=0, caracteres_restantes;
+	char msg[MAX], cyph[MAX], v1[10], v2[10];// opc es la opcion que se elige en el menu principal
+	
 	do{
 
 		system("cls");//Borramos todo lo escrito anteriormente
@@ -14,7 +15,7 @@ int main()
 		printf("1.-Menu de encriptacion\n");//este menú contiene los distintos métodos de encriptacion
 		printf("2.-Menu de desencriptacion\n");//este otro contiene las formas en las que se pueden descodificar los mensajes ya encriptados por estos métodos
 		printf("3.-Descripcion de los codigos\n");//este apartado explica al usuario las opciones en las que puede encriptar su mensaje
-		printf("9.-Salir\n");//sales del programa, fin
+		printf("4.-Salir\n");//sales del programa, fin
 		printf("Opcion escogida: ");
 		scanf("%d",&opc);//elige la opcion
 		switch(opc)
@@ -25,10 +26,11 @@ int main()
 				do{// se ejecutan al menos una vez y mientras l usuario no salga del menu (presione 4)
 				printf("MENU DE ENCRIPTACION\n\n");
 				//metodos de encriptacion
-				printf("1.-Metodo Cesar \n");
+				printf("1.-Metodo Cesar\n");
 				printf("2.-Metodo Ascii\n");
-				printf("3.-Encriptacion Alternada\n");
-				printf("4.-Salir\n");//vas al menu principal
+				printf("3.-Metodo Windings\n");
+				printf("4.-Metodo por transposicion\n");
+				printf("5.-Salir\n");//vuelves al menu principal
 				printf("opcion escogida: ");
 				scanf("%d",&opc1);//eliges el codigo
  					switch(opc1)
@@ -48,7 +50,7 @@ int main()
 							{  
 								cyph[i]=msg[i]+x;//el caracter cifrado será ese desplazado x espacios
 								if(cyph[i]>'z')//si el desplazamiento provoca que el caracter ya no sea una letra
-									cyph[i]='a'+(cyph[i]-123);//123=z+1. de esta forma provocamos que vuelva al principio del alfabeto
+							 	cyph[i]= rueda(cyph[i]);//123=z+1. de esta forma provocamos que vuelva a la a
 							}
 
 						else
@@ -56,7 +58,7 @@ int main()
 							{
 							cyph[i]=msg[i]+x;//el caracter es cifrado con normalidad
 								if(cyph[i]>'Z')//si se pasa  de la Z
-								cyph[i]='A'+(cyph[i]- 91); //91=Z+1. provocamos que vuelva al principio del alfabeto 
+								cyph[i]= rueda(cyph[i]); //91=Z+1. de esta forma provocamos que vuelva a la A
 							}
 						else//en caso de que sea cualquier otro caracter
 						cyph[i]=msg[i];//se mantiene igual
@@ -103,6 +105,64 @@ int main()
 					    getch();
  						break;
  					case 4:
+ 						system("cls");
+ 						printf("Introduzca el mensaje que desa cifrar: \n");
+						scanf(" %[^\n]", msg);
+						
+						    for (i=0, j=0; msg[i]!='\0'; i++, j++)
+						    {
+						        if (msg[i]==' ')//Cada vez que nos encontremos un espacio pasamos al siguiente carácter
+						        {
+						            i++;
+						        }
+						        cyph[j]=msg[i];//El texto queda igual con los espacios eliminados
+						    }
+						    caracteres_restantes =10-(j%10);//Se guarda el número de caracteres restantes para completar los grupos de 10
+						    for (i=0;i<caracteres_restantes;i++)//mientras queden caracteres restantes
+						    {
+						        cyph[j]='*';//Se le asigna a cada uno un caracter nulo
+						        j++;
+						    }
+						    for (i=0, k=0;i<j;i++)//Recorremos el mensaje sin espacios
+						    {
+						        v1[k]=cyph[i];//copiamos el carácter en otra cadena
+						        k++;
+						        if (k%10==0)//si es multiplo de 10
+						        {
+						            v1[k]='\0';//se cierra el grupo
+						            for (m=0;m<10;m++)//Recorremos el grupo de 10
+						            {
+						                v2[m]=v1[inicial[m]];//guardamos en otra cadena los caracteres en el orden inicial
+						            }
+						              v2[10]='\0';//
+						            printf("%s", v2);//imprimimos en pantalla el grupo de 1
+						            
+						            k=0;//reiniciamos el recorrido de la primera cadena
+						     
+						        }
+						    }
+						   printf("\n");
+						     for (i=0;i<j;i++)//recorremos el  mensaje
+						    {
+						        v1[k]=cyph[i];//copiamos el carácter original en otra cadena
+						        k++;
+						        if (k%10==0)//si es múltiplo de 10
+						        {
+						            v1[k]='\0';//se cierra el grupo
+						            for (l=0;l<10;l++)//Recorremos el grupo
+						            {
+						                v2[l]=v1[cifrado[l]];//Guardamos el grupo con el orden cifrado
+						            }
+						              v2[10]='\0';//y lo cerramos
+						   
+						            printf("%s ", v2);//imprimimos en pantalla el grupo
+						            
+						            k=0;//reiniciamos la lectura de grupo
+						        }
+						    }   
+						getch();
+ 						break;
+ 					case 5:
  						break;
  					default:
  						system("cls");
@@ -110,7 +170,7 @@ int main()
  						getch();//le das a cualquier tecla y regresas al menu principal
  						break;
 		 			}
-		 		}while(opc1!=4);//si le das al 4 regresas al menu principal
+		 		}while(opc1!=5);//si le das al 5 regresas al menu principal
 		 		break;
 			case 2:
 				system("cls");
@@ -120,8 +180,9 @@ int main()
 				printf("MENU DE DESENCRIPTACION\n\n");
 				printf("1.-Metodo Cesar\n");
 				printf("2.-Metodo Ascii\n");
-				printf("3.-Forma 1\n");
-				printf("4.-Salir\n");//vuelves al menu principal
+				printf("3.-Metodo Windings\n");
+				printf("4.-Metodo por transposicion\n");
+				printf("5.-Salir\n");//vuelves al menu principal
 				printf("opcion escogida: ");
 				scanf("%d",&opc2);
 		 			switch(opc2)
@@ -141,14 +202,14 @@ int main()
 							 {  // if (ord('a')<=msg[i]<='z')
 							msg[i]=cyph[i]-x;
 							if(msg[i]<'a')
-							msg[i]='z'-(96-msg[i]);//123=z+1
+							msg[i]='z'-(96-msg[i]);//96=a-1
 						}
 						else
 						if(cyph[i] >= 'A' && cyph[i] <= 'Z')
 						{
 							msg[i]=cyph[i]-x;
 							if(msg[i]<'A')
-							msg[i]='Z'-(64-msg[i]); //91=Z+1
+							msg[i]='Z'-(64-msg[i]); //64=A-1
 						}
 						else
 						msg[i]=cyph[i];
@@ -165,47 +226,32 @@ int main()
 		 					printf("indique el numero de caracteres (incluyendo espacios):");
 		 					scanf("%i", &x);
 		 					
-		 					for(i=0;i<x;++i){
-							scanf(" %i\t", j);
-							msg[i]=j;
-							printf("%c",msg[i] );
+		 					do{
+							scanf("%i\t", j);
+							printf("%c",j );
+							++i;
  							}
+ 							while(x>i);
  							
 		 					break;
 		 				case 3:
-		 						system("cls");
- 						printf("escriba el mensaje:\n");
- 						scanf(" %[^\n]", msg);
- 						printf("%s\n", msg);
-						 x=x%26;
-						 i=0;
- 						while (msg[i] !='\0'){
- 						if(msg[i] >= 'a' && msg[i] <= 'z'){  // if (ord('a')<=msg[i]<='z')
-							cyph[i]=msg[i]-60;
-						}
-						else
-						if(msg[i] >= 'A' && msg[i] <= 'Z'){
-							cyph[i]=msg[i]+90;
-						}
-						else
-						cyph[i]=msg[i];
-						++i;
-					    }
-					    cyph[i] ='\0';
-					    printf("%s", cyph);
-
-					    getch();
- 						break;
+		 				system("cls");
+		 					printf("indique el numero de caracteres (incluyendo espacios):");
+		 					scanf("%i", &x);
+		 					i=0;
+		 					while (i<x){
+							scanf("%i", &j);
+							printf("%c",j);
+							i++;
+ 							}
+ 							getch();
 		 					break;
 		 				case 4:
-		 					break;
-		 				default:
-		 					system("cls");
-		 					printf("la opcion no esta en el menu");
-		 					getch();
-		 					break;
+ 							break;
+		 				case 5:
+ 							break;
 							}
-		 		}while(opc2!=4);
+		 		}while(opc2!=5);
 					break;
 			case 3:
 				system("cls");
@@ -215,8 +261,9 @@ int main()
 				printf("MENU DE INFORMACION\n\n");//en este menu se	ofrece informacio de los codigos
 				printf("1.-Metodo Cesar\n");
 				printf("2.-Metodo Ascii\n");
-				printf("3.-Forma 1\n");
-				printf("4.-Salir\n");//vuelves al menu principal
+				printf("3.-Metodo Windings\n");
+				printf("4.-Metodo por transposicion\n");
+				printf("5.-Salir\n");//vuelves al menu principal
 				printf("opcion escogida: ");
 				scanf("%d",&opc3);
 			 		switch(opc3)
@@ -234,7 +281,7 @@ int main()
 								x=x%27;
 								n=i+x;
 								if(n>122)
-								j=97+(n-123);
+								j=rueda(n);
 								else
 								j=n;
 								printf("%c", i);
@@ -246,7 +293,7 @@ int main()
 								x=x%27;
 								n=i+x;
 								if(n>90)
-								j=65+(n-91);
+								j=rueda(n);
 								else
 								j=n;
 								printf("%c", i);
@@ -282,37 +329,59 @@ int main()
 				 			printf("\n");
 					 		printf("CODIGO WINDINGS:\n");
 							printf("Este codigo consiste en la conversion de cada letra del  mensaje un caracter.\n");
+							
+							
 							printf("\n");
+							printf("letra:");
+							printf("\t");
+							printf("  caracter:");
+							printf("\t");
+							printf("numero ASCII:");
+							printf("\n");
+							
 
 							for(i=97;i<123;i++){
 								x=x%27;
 								n=i-60;
 								j=n;
 								printf("%c", i);
-								printf("\t");
-								printf("%c", j);
+								printf("      \t");
+								printf("  %c", j);
+								printf("       \t");
+								printf("%i", j);
 								printf("\n");
 							}
 							for(i=65;i<91;i++){
 								x=x%27;
 								n=i+90;
 								j=n;
-								printf("%c", i);
-								printf("\t");
-								printf("%c", j);
+							printf("%c", i);
+								printf("      \t");
+								printf("  %c", j);
+								printf("       \t");
+								printf("%i", j);
 								printf("\n");
 							}
 							getch();
 				 			break;
 				 		case 4:
+				 			system("cls");
+				 			printf("CODIGO POR TRANSPOSICION:\n");
+							printf("Este codigo consiste en la reorganizacion de las letras del mensaje cogiendo conjuntos de 10 en 10,\nsi en alguno de estos conjuntos faltan letras el programa pondra un *.");
+							printf("\nEjemplo:");
+							printf("el mensaje: Este codigo esta encriptado lo transforma en:\n");
+							printf("");
+							getch();
 				 			break;
+				 		case 5:
+ 							break;
 			 		default:
 				 		system("cls");
 					 	printf("la opcion no esta en el menu");
 					 	getch();
 					 	break;
 						}
-		 		}while(opc3!=4);
+		 		}while(opc3!=5);
 					break;
 			case 4:
 				//sales del programa
@@ -328,6 +397,11 @@ int main()
 
 }while(opc!=4);
 }
+int rueda(int letra){
 
+int salida;
+salida=  letra-26;//26='z'-'a' ó 'Z'-'A'
+return salida;
+}
 
 

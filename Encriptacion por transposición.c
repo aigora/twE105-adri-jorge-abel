@@ -1,8 +1,15 @@
 #include <stdio.h>
 #define MAX 200
+void trans(int i);
 int main()
-{	
-int cifrado[10]={5,2,6,3,8,4,9,0,7,1}, inicial[10]={0,1,2,3,4,5,6,7,8,9},i,j,k,l,m, espacios=0, caracteres_restantes;
+{
+trans(0);
+    return 0;
+}
+void trans(int i)
+{
+		
+int cifrado[10]={5,2,6,3,8,4,9,0,7,1}, inicial[10]={0,1,2,3,4,5,6,7,8,9},j,k,l,m, espacios=0, caracteres_restantes;
 char msg[MAX], cyph[MAX], v1[10], v2[10];
 printf("Cifrado por transposicion \n");
 printf("Introduzca el mensaje que desa cifrar: \n");
@@ -59,5 +66,4 @@ scanf ("%200[^\n]", &msg);
             k=0;//reiniciamos la lectura de grupo
         }
     }   
-    return 0;
 }
