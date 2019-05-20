@@ -8,13 +8,6 @@ int main()
 	char msg[MAX], cyph[MAX];
 	do{
 
-		system("cls");
-		printf("MENU DE OPCIONES\n\n");//menu principal
-		//le mostramos al usuario los diferentes menus
-		printf("1.-Menu de encriptacion\n");
-		printf("2.-Menu de desencriptacion\n");
-		printf("3.-Descripcion de los codigos\n");
-		printf("4.-Salir\n");//sales del programa
 		system("cls");//Borramos todo lo escrito anteriormente
 		printf("MENU DE OPCIONES\n\n");//menú principal
 		//le mostramos al usuario las diferentes opciones
@@ -37,9 +30,6 @@ int main()
 				printf("2.-Metodo Ascii\n");
 				printf("3.-Encriptacion Alternada\n");
 				printf("4.-Salir\n");//vas al menu principal
-				printf("3.-Forma 1\n");
-				printf("4.-Forma 1\n");
-				printf("9.-Salir\n");//vas al menu principal
 				printf("opcion escogida: ");
 				scanf("%d",&opc1);//eliges el codigo
  					switch(opc1)
@@ -123,7 +113,7 @@ int main()
  						getch();//le das a cualquier tecla y regresas al menu principal
  						break;
 		 			}
-		 		}while(opc1!=4);//si le das al 9 regresas al menu principal
+		 		}while(opc1!=4);//si le das al 4 regresas al menu principal
 		 		break;
 			case 2:
 				system("cls");
