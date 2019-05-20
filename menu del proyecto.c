@@ -7,25 +7,13 @@ int main()
 	int opc, i, x, n, j;// opc es la opcion que se elige en el menu principal
 	char msg[MAX], cyph[MAX];
 	do{
-
-		system("cls");
-		printf("MENU DE OPCIONES\n\n");//menu principal
-		//le mostramos al usuario los diferentes menus
-		printf("1.-Menu de encriptacion\n");
-		printf("2.-Menu de desencriptacion\n");
-		printf("3.-Descripcion de los codigos\n");
-		printf("4.-Salir\n");//sales del programa
-
-
-
 		system("cls");//Borramos todo lo escrito anteriormente
 		printf("MENU DE OPCIONES\n\n");//menú principal
 		//le mostramos al usuario las diferentes opciones
 		printf("1.-Menu de encriptacion\n");//este menú contiene los distintos métodos de encriptacion
 		printf("2.-Menu de desencriptacion\n");//este otro contiene las formas en las que se pueden descodificar los mensajes ya encriptados por estos métodos
 		printf("3.-Descripcion de los codigos\n");//este apartado explica al usuario las opciones en las que puede encriptar su mensaje
-		printf("9.-Salir\n");//sales del programa, fin
-
+		printf("4.-Salir\n");//sales del programa, fin
 		printf("Opcion escogida: ");
 		scanf("%d",&opc);//elige la opcion
 		switch(opc)
@@ -33,30 +21,16 @@ int main()
 			case 1://en caso de que se elija el menú de encriptación
 				system("cls");//borra lo que hay escrito en la ventana
 				int opc1;//variable opcion que se elige en el menú de encriptación
-				do{// se ejecutan al menos una vez y mientras l usuario no salga del menu (presione 9)
+				do{// se ejecutan al menos una vez y mientras l usuario no salga del menu (presione 4)
 				system("cls");
 				printf("MENU DE ENCRIPTACION\n\n");
 				//metodos de encriptacion
 				printf("1.-Metodo Cesar \n");
 				printf("2.-Metodo Ascii\n");
-
-
 				printf("3.-Encriptacion Alternada\n");
 				printf("4.-Salir\n");//vas al menu principal
-
-				printf("3.-Forma 1\n");
-				printf("4.-Forma 1\n");
-				printf("9.-Salir\n");//vas al menu principal
-
-
-				printf("3.-Encriptacion Alternada\n");
-				printf("4.-Salir\n");//vas al menu principal
-				printf("3.-Forma 1\n");
-				printf("4.-Forma 1\n");
-				printf("9.-Salir\n");//vas al menu principal
-
 				printf("opcion escogida: ");
-				scanf("%d",&opc1);//eliges el codigo
+				scanf("%d", &opc1);//eliges el codigo
  					switch(opc1)
  					{
  					case 1://Se inicia el método de encriptación César
@@ -65,8 +39,6 @@ int main()
  						scanf("%i", &x);//lo determina el usuario
  						printf("\n");// se deja un espacio para favorecer la limpieza de la pantalla
  						printf("escriba el mensaje:\n");
-
- 						
  						scanf(" %[^\n]", msg);//el mensaje introducido por el usuario se almacena en la variable msg
  						printf("%s\n", msg);//se muestra el mensaje antes de encriptaro
 						x=x%26;//con esta operación evitamos que se sume un numero mayor del total de letras en el abecedario
@@ -127,7 +99,6 @@ int main()
 					    }
 					    cyph[i] ='\0';
 					    printf("%s", cyph);
-
 					    getch();
  						break;
  					case 4:
@@ -138,7 +109,7 @@ int main()
  						getch();//le das a cualquier tecla y regresas al menu principal
  						break;
 		 			}
-		 		}while(opc1!=4);//si le das al 9 regresas al menu principal
+		 		}while(opc1!=4);//si le das al 4 regresas al menu principal
 		 		break;
 			case 2:
 				system("cls");
@@ -184,8 +155,6 @@ int main()
 					    }
 					    msg[i] ='\0';
 					    printf("%s", msg);
-
-
 					    getch();
 		 					break;
 		 				case 2:
@@ -343,13 +312,7 @@ int main()
 					 	getch();
 					 	break;
 						}
-
-
 		 		}while(opc3!=4);
-
-
-
-
 					break;
 			case 4:
 				//sales del programa
