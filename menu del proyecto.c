@@ -107,13 +107,15 @@ int main()
  						break;
  					case 4:
  						break;
+ 					case 5:
+ 						break;
  					default:
  						system("cls");
  						printf("la opcion no esta en el menu");//si el usuario elige un numero que no este en el menu
  						getch();//le das a cualquier tecla y regresas al menu principal
  						break;
 		 			}
-		 		}while(opc1!=4);//si le das al 4 regresas al menu principal
+		 		}while(opc1!=5);//si le das al 5 regresas al menu principal
 		 		break;
 			case 2:
 				system("cls");
@@ -187,8 +189,12 @@ int main()
  							}
  							getch();
 		 					break;
+		 				case 4:
+ 							break;
+		 				case 5:
+ 							break;
 							}
-		 		}while(opc2!=4);
+		 		}while(opc2!=5);
 					break;
 			case 3:
 				system("cls");
@@ -289,13 +295,15 @@ int main()
 				 			break;
 				 		case 4:
 				 			break;
+				 		case 5:
+ 							break;
 			 		default:
 				 		system("cls");
 					 	printf("la opcion no esta en el menu");
 					 	getch();
 					 	break;
 						}
-		 		}while(opc3!=4);
+		 		}while(opc3!=5);
 					break;
 			case 4:
 				//sales del programa
