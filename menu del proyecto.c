@@ -24,6 +24,7 @@ int main()
 				system("cls");//borra lo que hay escrito en la ventana
 				int opc1;//variable opcion que se elige en el menú de encriptación
 				do{// se ejecutan al menos una vez y mientras l usuario no salga del menu (presione 4)
+				system("cls");
 				printf("MENU DE ENCRIPTACION\n\n");
 				//metodos de encriptacion
 				printf("1.-Metodo Cesar\n");
@@ -367,10 +368,13 @@ int main()
 				 		case 4:
 				 			system("cls");
 				 			printf("CODIGO POR TRANSPOSICION:\n");
-							printf("Este codigo consiste en la reorganizacion de las letras del mensaje cogiendo conjuntos de 10 en 10,\nsi en alguno de estos conjuntos faltan letras el programa pondra un *.");
+				 			printf("Este codigo consiste en la reordenacion de las letras del mensaje agrupando \nel mensaje en bloques de 10 caracteres, si en el caso de que faltasen letras\n para completar el ultimo grupo de 10 el programa llenara los huecos \ncon el caracter '*'.");
+							printf("\n El programa en primer lugar elimina los espacios del mensaje,\n despues, agrupa los caracteres restantes de 10 en 10\n para finalmente cambiar el orden en el que se encuentran los caracteres de cada grupo.\n");
 							printf("\nEjemplo:");
-							printf("el mensaje: Este codigo esta encriptado lo transforma en:\n");
-							printf("");
+							printf("el mensaje: Este codigo estara encriptado:\n");
+							printf("pasa a: Estecodigoestaraencriptado\n");
+							printf("se agrupa: Estecodigo estaraencr iptado****\n");
+							printf("otdegcoEis ateacrrens ot*a*d*i*p\n");
 							getch();
 				 			break;
 				 		case 5:
