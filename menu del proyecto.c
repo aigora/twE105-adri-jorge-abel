@@ -369,8 +369,8 @@ int main()
 				 			printf("CODIGO POR TRANSPOSICION:\n");
 							printf("Este codigo consiste en la reorganizacion de las letras del mensaje cogiendo conjuntos de 10 en 10,\nsi en alguno de estos conjuntos faltan letras el programa pondra un *.");
 							printf("\nEjemplo:");
-							printf("el mensaje: Este codigo esta encriptado lo transforma en:\n");
-							printf("");
+							printf("el mensaje: 'HolaMundo' lo transforma en:\n");
+							printf("ulnaoM*Hdo.");
 							getch();
 				 			break;
 				 		case 5:
