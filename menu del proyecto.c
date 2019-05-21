@@ -251,6 +251,11 @@ int main()
  							break;
 		 				case 5:
  							break;
+ 						default:
+ 						system("cls");
+ 						printf("la opcion no esta en el menu");//si el usuario elige un numero que no este en el menu
+ 						getch();//le das a cualquier tecla y regresas al menu principal
+ 						break;
 							}
 		 		}while(opc2!=5);
 					break;
