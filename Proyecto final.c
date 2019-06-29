@@ -66,6 +66,11 @@ int main()
 					    }
 					    cyph[i] ='\0';
 					    printf("%s", cyph);//se imprime en pantalla el mensaje cifrado
+						FILE *ec;
+ 						ec = fopen("encriptado_cesar.txt", "w");
+					    fprintf(ec,"%s",cyph);
+					    fclose(ec);
+					    printf("%s", cyph);//se imprime en pantalla el mensaje cifrado
 					    getch();//cuando se pulse cualquier tecla se finaliza la secuencia
  						break;
  					case 2:
@@ -102,7 +107,10 @@ int main()
 					    }
 					    cyph[i] ='\0';
 					    printf("%s", cyph);
-
+						FILE *ew;
+ 						ew = fopen("encriptado_windings.txt", "w");
+					    fprintf(ew,"%s",cyph);
+					    fclose(ew);
 					    getch();
  						break;
  					case 4:
@@ -218,8 +226,10 @@ int main()
 					    }
 					    msg[i] ='\0';
 					    printf("%s", msg);
-
-
+						FILE *dc;
+ 						dc = fopen("desencriptado_cesar.txt", "w");
+					    fprintf(dc,"%s",msg);
+					    fclose(dc);
 					    getch();
 		 					break;
 		 				case 2:
