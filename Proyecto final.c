@@ -79,11 +79,15 @@ int main()
  						scanf(" %[^\n]", msg);
  						printf("|%s|\n", msg);
  						i=0;
+ 						FILE *ea;
+ 						ea = fopen("encriptado_ascii.txt", "w");
  						while (msg[i] !='\0'){
  						cyph[i]=msg[i];
  						printf("|%i|", cyph[i]);
+ 						fprintf(ea,"|%i|", cyph[i]);
  						++i;
 					    }
+					    fclose(ea);
 					    getch();
  						break;
  					case 3:
@@ -117,7 +121,8 @@ int main()
  						system("cls");
  						printf("Introduzca el mensaje que desa cifrar: \n");
 						scanf(" %[^\n]", msg);
-						
+						FILE *eal;
+ 						eal = fopen("encriptado_alternada.txt", "w");
 						    for (i=0, j=0; msg[i]!='\0'; i++, j++)
 						    {
 						        if (msg[i]==' ')//Cada vez que nos encontremos un espacio pasamos al siguiente carácter
@@ -145,7 +150,6 @@ int main()
 						            }
 						              v2[10]='\0';//
 						            printf("%s", v2);//imprimimos en pantalla el grupo de 1
-						            
 						            k=0;//reiniciamos el recorrido de la primera cadena
 						     
 						        }
@@ -165,10 +169,11 @@ int main()
 						              v2[10]='\0';//y lo cerramos
 						   
 						            printf("%s ", v2);//imprimimos en pantalla el grupo
-						            
+						            fprintf(eal,"%s",v2);
 						            k=0;//reiniciamos la lectura de grupo
 						        }
-						    }   
+						    }  
+							fclose(eal); 
 						getch();
  						break;
  					case 5:
