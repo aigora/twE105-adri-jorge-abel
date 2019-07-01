@@ -70,6 +70,7 @@ int main()
 					    fclose(ec);
 					    printf("%s", cyph);//se imprime en pantalla el mensaje cifrado
 					    getch();//cuando se pulse cualquier tecla se finaliza la secuencia
+					    
  						break;
  					case 2:
  						system("cls");
@@ -174,6 +175,7 @@ int main()
 						getch();
  						break;
  					case 5:
+ 						return main();
  						break;
  					default:
  						system("cls");
@@ -264,6 +266,7 @@ int main()
 		 				case 4:
  							break;
 		 				case 5:
+		 					return main();
  							break;
  						default:
  						system("cls");
@@ -322,6 +325,7 @@ int main()
 								printf("\n");
 							}
 							getch();
+							
 				 			break;
 				 		case 2:
 				 			system("cls");
@@ -397,6 +401,7 @@ int main()
 							getch();
 				 			break;
 				 		case 5:
+				 			return main();
  							break;
 			 		default:
 				 		system("cls");
