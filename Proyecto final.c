@@ -41,9 +41,8 @@ int main()
  						printf("defina x:");//x es el número de posiciones en el alfabeto que se moverá cada letra
  						scanf("%i", &x);//lo determina el usuario
  						printf("\n");// se deja un espacio para favorecer la limpieza de la pantalla
- 						printf("escriba el mensaje:\n");
+ 						printf("escriba el mensaje:\n\n");
 						scanf(" %[^\n]", msg);//el mensaje introducido por el usuario se almacena en la variable msg
- 						printf("%s\n", msg);//se muestra el mensaje antes de encriptaro
 						x=x%26;//con esta operación evitamos que se sume un numero mayor del total de letras en el abecedario
  						for (i=0; msg[i] !='\0'; i++)//comenzamos la lectura por el primer caracter introducido por el usuario y la finalizamos con la secuencia de cierre
 						{
@@ -55,17 +54,16 @@ int main()
 							}
 
 						else
-							if(msg[i] >= 'A' && msg[i] <= 'Z')//si el carácter es una letra mayúscula
-							{
-							cyph[i]=msg[i]+x;//el caracter es cifrado con normalidad
-								if(cyph[i]>'Z')//si se pasa  de la Z
-								cyph[i]= rueda(cyph[i]); //91=Z+1. de esta forma provocamos que vuelva a la A
+						if(msg[i] >= 'A' && msg[i] <= 'Z')//si el carácter es una letra mayúscula
+						{
+						cyph[i]=msg[i]+x;//el caracter es cifrado con normalidad
+						if(cyph[i]>'Z')//si se pasa  de la Z
+						cyph[i]= rueda(cyph[i]); //91=Z+1. de esta forma provocamos que vuelva a la A
 							}
 						else//en caso de que sea cualquier otro caracter
 						cyph[i]=msg[i];//se mantiene igual
 					    }
 					    cyph[i] ='\0';
-					    printf("%s", cyph);//se imprime en pantalla el mensaje cifrado
 						FILE *ec;
  						ec = fopen("encriptado_cesar.txt", "w");
 					    fprintf(ec,"%s",cyph);
@@ -75,7 +73,7 @@ int main()
  						break;
  					case 2:
  						system("cls");
- 						printf("escriba el mensaje:\n");
+ 						printf("escriba el mensaje:\n\n");
  						scanf(" %[^\n]", msg);
  						printf("|%s|\n", msg);
  						i=0;
@@ -92,9 +90,8 @@ int main()
  						break;
  					case 3:
  						system("cls");
- 						printf("escriba el mensaje:\n");
+ 						printf("Escriba el mensaje:\n\n");
  						scanf(" %[^\n]", msg);
- 						printf("%s\n", msg);
 						 x=x%26;
 						 i=0;
  						while (msg[i] !='\0'){
@@ -119,7 +116,7 @@ int main()
  						break;
  					case 4:
  						system("cls");
- 						printf("Introduzca el mensaje que desa cifrar: \n");
+ 						printf("Introduzca el mensaje que desa cifrar: \n\n");
 						scanf(" %[^\n]", msg);
 						FILE *eal;
  						eal = fopen("encriptado_alternada.txt", "w");
@@ -206,7 +203,7 @@ int main()
  						    printf("defina x:");
  						    scanf("%i", &x);
  						    printf("\n");
- 						    printf("escriba el mensaje encriptado:\n");
+ 						    printf("escriba el mensaje encriptado:\n\n");
  						    scanf(" %[^\n]",cyph);
  						    x=x%27;
  						    i=0;
@@ -239,15 +236,17 @@ int main()
 		 					break;
 		 				case 2:
 		 					system("cls");
+		 					i=0;
 		 					printf("indique el numero de caracteres (incluyendo espacios):");
 		 					scanf("%i", &x);
-		 					
+		 					printf("\n");
+		 					printf("escriba los numeros de uno en uno\n\n");
 		 					do{
 							scanf("%i\t", j);
-							printf("%c",j );
+							printf("%c\n",j );
 							++i;
  							}
- 							while(x>i);
+ 							while(x>=i);
  							
 		 					break;
 		 				case 3:
@@ -257,7 +256,7 @@ int main()
 		 					i=0;
 		 					while (i<x){
 							scanf("%i", &j);
-							printf("%c",j);
+							printf("'%c'",j);
 							i++;
  							}
  							getch();
