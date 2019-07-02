@@ -93,7 +93,7 @@ int main()
  						system("cls");
  						printf("Escriba el mensaje:\n\n");
  						scanf(" %[^\n]", msg);
-						 x=x%26;
+						
 						 i=0;
  						while (msg[i] !='\0'){
  						if(msg[i] >= 'a' && msg[i] <= 'z'){  // if (ord('a')<=msg[i]<='z')
@@ -243,24 +243,39 @@ int main()
 		 					scanf("%i", &x);
 		 					printf("\n");
 		 					printf("escriba los numeros de uno en uno\n\n");
-		 					do{
-							scanf("%i\t", j);
-							printf("%c\n",j );
+		 					while(x>i){
+							scanf("%i", &j);
+							
+							printf("%i = '%c'\n",j, j );
 							++i;
  							}
- 							while(x>=i);
- 							
+ 						
+ 							getch();
 		 					break;
 		 				case 3:
 		 				system("cls");
 		 					printf("indique el numero de caracteres (incluyendo espacios):");
+		 				
+		 					
 		 					scanf("%i", &x);
+		 					printf("Numero Ascii   Caracter  Letra\n ");
 		 					i=0;
-		 					while (i<x){
+		 					while(x>i){
+		 					if(j >= ('a'- 60) && j <= ('z'- 60)){  // if (ord('a')<=msg[i]<='z')
+							k=j+60;
+							}
+							else
+							if(j >= ('a'+90) && j <= ('z'+90)){
+							k=j-90;
+							}
+							else
+							k=j;
 							scanf("%i", &j);
-							printf("'%c'",j);
-							i++;
+							
+							printf("%i =           '%c'  ->   '%c'\n",j, j, k);
+							++i;
  							}
+ 						
  							getch();
 		 					break;
 		 				case 4:
@@ -412,12 +427,13 @@ int main()
 		 		}while(opc3!=5);
 					break;
 			case 4:
-				//sales del programa
-				break;
+				printf("\nAdios");
+				break;//sales del programa
 			default:
 				system("cls");
 				printf("la opcion que has escogido no esta en el menu ");
 				getch();
+				return main();
 				break;
 		
 	}while(opc!=4);
