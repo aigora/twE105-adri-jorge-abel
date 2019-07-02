@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <conio.h>
 #define MAX 200
+void desencriptacion_alternada();
 int main()
 {
 	int cifrado[10]={5,2,6,3,8,4,9,0,7,1}, inicial[10]={0,1,2,3,4,5,6,7,8,9},i,j,k,l,m,x,n,opc, espacios=0, caracteres_restantes;
@@ -279,6 +280,9 @@ int main()
  							getch();
 		 					break;
 		 				case 4:
+		 					system("cls");
+		 					desencriptacion_alternada();
+							getch();
  							break;
 		 				case 5:
 		 					return main();
@@ -448,4 +452,54 @@ salida=  letra-26;//26='z'-'a' ó 'Z'-'A'
 return salida;
 }
 
+void desencriptacion_alternada(){
+int i,j,k,m,l,inicial[10]={0,1,2,3,4,5,6,7,8,9};
+	char msg[200], cyph[200],v1[10], v2[10];
+	int descifrado[10]={7,9,1,3,5,0,2,8,4,6};
+	printf("Introduzca el mensaje que desa cifrar: \n");
+						scanf(" %[^\n]", msg);
+						FILE *dal;
+ 						dal = fopen("desencriptado_alternada.txt", "w");
+							    for (i=0, j=0; msg[i]!='\0'; i++, j++)
+						    {
+						        cyph[j]=msg[i];//El texto queda igual con los espacios eliminados
+						    }
+						    for (i=0, k=0;i<j;i++)//Recorremos el mensaje sin espacios
+						    {
+						        v1[k]=cyph[i];//copiamos el carácter en otra cadena
+						        k++;
+						        if (k%10==0)//si es multiplo de 10
+						        {
+						            v1[k]='\0';//se cierra el grupo
+						            for (m=0;m<10;m++)//Recorremos el grupo de 10
+						            {
+						                v2[m]=v1[inicial[m]];//guardamos en otra cadena los caracteres en el orden inicial
+						            }
+						              v2[10]='\0';//
+						            printf("%s", v2);//imprimimos en pantalla el grupo de 1
+						            k=0;//reiniciamos el recorrido de la primera cadena
+						     
+						        }
+						    }
+						   printf("\n");
+						     for (i=0;i<j;i++)//recorremos el  mensaje
+						    {
+						        v1[k]=cyph[i];//copiamos el carácter original en otra cadena
+						        k++;
+						        if (k%10==0)//si es múltiplo de 10
+						        {
+						            v1[k]='\0';//se cierra el grupo
+						            for (l=0;l<10;l++)//Recorremos el grupo
+						            {
+						                v2[l]=v1[descifrado[l]];//Guardamos el grupo con el orden cifrado
+						            }
+						              v2[10]='\0';//y lo cerramos
+						   
+						            printf("%s ", v2);//imprimimos en pantalla el grupo
+						            fprintf(dal,"%s",v2);
+						            k=0;//reiniciamos la lectura de grupo
+						        }
+						    }  
+fclose(dal); 
+}
 
