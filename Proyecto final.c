@@ -262,16 +262,18 @@ int main()
 		 					printf("Numero Ascii   Caracter  Letra\n ");
 		 					i=0;
 		 					while(x>i){
-		 					if(j >= ('a'- 60) && j <= ('z'- 60)){  // if (ord('a')<=msg[i]<='z')
+		 					
+							scanf("%i", &j);
+		 					if(j >= ('a'- 60) && j <= ('z'- 60)){ 
 							k=j+60;
 							}
 							else
-							if(j >= ('a'+90) && j <= ('z'+90)){
+							if(j >= ('A'+90) && j <= ('Z'+90)){
 							k=j-90;
 							}
 							else
 							k=j;
-							scanf("%i", &j);
+							
 							
 							printf("%i =           '%c'  ->   '%c'\n",j, j, k);
 							++i;
@@ -371,7 +373,7 @@ int main()
 				 			system("cls");
 				 			printf("\n");
 					 		printf("CODIGO WINDINGS:\n");
-							printf("Este codigo consiste en la conversion de cada letra del  mensaje un caracter.\n");
+							printf("Este codigo consiste en la conversion de cada letra del  mensaje un caracter (cualquier caracter que no esté en esta tabla será transformado en el mismo caracter por el programa).\n");
 							
 							
 							printf("\n");
