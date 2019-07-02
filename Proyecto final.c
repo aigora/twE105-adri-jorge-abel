@@ -255,10 +255,13 @@ int main()
 		 					break;
 		 				case 3:
 		 				system("cls");
-		 					printf("indique el numero de caracteres (incluyendo espacios):");
-		 				
+		 					printf("Indique el numero de caracteres (incluyendo espacios):");
 		 					
+		 				
 		 					scanf("%i", &x);
+		 					printf("\n\n");
+		 					
+		 					printf("Escriba el numero decimal correspondiente al caracter ASCII deseado (si es necesario puede consultarlo en el submenu de informacion en la tabla del metodo Windings):\n\n");
 		 					printf("Numero Ascii   Caracter  Letra\n ");
 		 					i=0;
 		 					while(x>i){
