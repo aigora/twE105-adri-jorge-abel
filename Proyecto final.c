@@ -239,6 +239,8 @@ int main()
 		 					break;
 		 				case 2:
 		 					system("cls");
+		 					FILE *da;
+ 							da = fopen("desencriptado_ascii.txt", "w");
 		 					i=0;
 		 					printf("indique el numero de caracteres (incluyendo espacios):");
 		 					scanf("%i", &x);
@@ -248,24 +250,23 @@ int main()
 							scanf("%i", &j);
 							
 							printf("%i = '%c'\n",j, j );
+							fprintf(da,"%i = '%c'",j, j);
 							++i;
  							}
- 						
+ 							fclose(da);
  							getch();
 		 					break;
 		 				case 3:
-		 				system("cls");
+		 					system("cls");
+		 					FILE *dw;
+ 							dw = fopen("desencriptado_windings.txt", "w");
 		 					printf("Indique el numero de caracteres (incluyendo espacios):");
-		 					
-		 				
 		 					scanf("%i", &x);
 		 					printf("\n\n");
-		 					
 		 					printf("Escriba el numero decimal correspondiente al caracter ASCII deseado (si es necesario puede consultarlo en el submenu de informacion en la tabla del metodo Windings):\n\n");
 		 					printf("Numero Ascii   Caracter  Letra\n ");
 		 					i=0;
 		 					while(x>i){
-		 					
 							scanf("%i", &j);
 		 					if(j >= ('a'- 60) && j <= ('z'- 60)){ 
 							k=j+60;
@@ -279,9 +280,10 @@ int main()
 							
 							
 							printf("%i =           '%c'  ->   '%c'\n",j, j, k);
+							fprintf(dw,"%i =           '%c'  ->   '%c'",j, j, k);
 							++i;
  							}
- 						
+ 							fclose(dw);
  							getch();
 		 					break;
 		 				case 4:
